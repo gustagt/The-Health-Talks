@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
+const toughtsRoutes = require('./routes/toughtsRoutes')
 
 //Express Setup
 const app = express();
@@ -33,6 +34,12 @@ app.use(
         }
     }),
 )
+
+//Routes
+app.use('/toughts', toughtsRoutes);
+
+const ToughtController = require('./controllers/ToughtController')
+app.get('/', ToughtController.showToughts);
 
 //Flash Messages Setup
 app.use(flash());
