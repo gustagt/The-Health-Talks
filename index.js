@@ -23,7 +23,7 @@ app.use(
         saveUninitialized: false,
         store: new FileStore({
             logFn: function() {},
-            path: require('path').join(require('os').tempdir(),'sessions'),
+            path: require('path').join(require('os').tmpdir(),'sessions'),
         }),
         cookie: {
             secure:false,
@@ -47,5 +47,17 @@ app.use((req, res, next) => {
     next();
 })
 
+//Models
+const Tought = require('./models/Tought');
+const User = require('./models/User');
+
 
 const conn = require('./db/Conn');
+
+conn.sync()
+    .then(() => {
+        app.listen(3000)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
