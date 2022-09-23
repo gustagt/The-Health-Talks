@@ -3,7 +3,8 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
-const toughtsRoutes = require('./routes/toughtsRoutes')
+const toughtsRoutes = require('./routes/toughtsRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 //Express Setup
 const app = express();
@@ -37,6 +38,7 @@ app.use(
 
 //Routes
 app.use('/toughts', toughtsRoutes);
+app.use('/', authRoutes);
 
 const ToughtController = require('./controllers/ToughtController')
 app.get('/', ToughtController.showToughts);
