@@ -1,2 +1,3 @@
-# toughtsProject
-Projeto de um pequeno "diário" para guardar alguns pensamentos do usuário, utilizando NodeJS.
+# **_Toughts_**  
+
+_Projeto de um pequeno "diário" para guardar alguns pensamentos do usuário, utilizando NodeJS._
