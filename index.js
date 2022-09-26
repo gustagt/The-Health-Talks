@@ -39,14 +39,6 @@ app.use(
 //Flash Messages Setup
 app.use(flash());
 
-//Routes
-app.use('/toughts', toughtsRoutes);
-app.use('/', authRoutes);
-
-const ToughtController = require('./controllers/ToughtController')
-app.get('/', ToughtController.showToughts);
-
-
 //Set Session to response
 app.use((req, res, next) => {
     
@@ -56,6 +48,13 @@ app.use((req, res, next) => {
 
     next();
 })
+
+//Routes
+app.use('/toughts', toughtsRoutes);
+app.use('/', authRoutes);
+
+const ToughtController = require('./controllers/ToughtController')
+app.get('/', ToughtController.showToughts);
 
 //Models
 const Tought = require('./models/Tought');

@@ -45,21 +45,24 @@ module.exports = class AuthController {
             password: hashedPassword
         }
 
-        try
-        {
-            const createdUser = await User.create(user);
+        User.create(user)
+            .then((user) => {
+        // initialize session
+                req.session.userid = user.id
 
-            req.session.userid = createdUser.id;
+        // console.log('salvou dado')
+        // console.log(req.session.userid)
 
-            req.flash('message', 'Usuário registrado com sucesso!');
+        req.session.userid = user.id
 
-            req.session.save(() => {
-                res.redirect('/');
-            })       
-        }
-        catch(err)
-        {
-            console.log(err);
-        }       
+        req.flash('message', 'Cadastro realizado com sucesso!')
+
+        console.log(user);
+
+        req.session.save(() => {
+          res.redirect('/')
+        })
+      })
+      .catch((err) => console.log(err))
     }
 }
