@@ -16,6 +16,9 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static('public'));
 
+//Flash Messages Setup
+app.use(flash());
+
 //Session Middleware Setup
 app.use(
     session({
@@ -35,9 +38,6 @@ app.use(
         }
     }),
 )
-
-//Flash Messages Setup
-app.use(flash());
 
 //Set Session to response
 app.use((req, res, next) => {
