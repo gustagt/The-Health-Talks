@@ -2,12 +2,12 @@
     {{#if search}}
     <h1>Você está buscando por: <span>{{search}}</span></h1>
         {{#if toughtsQty }}
-            <p>Foram encontrados <span>{{toughtsQty}}</span> pensamento(s)</p>
+            <p>Foram encontrados <span>{{toughtsQty}}</span> postagem(s)</p>
         {{else}}
             <p>Nenhum pensamento encontrado para o termo <span>{{search}}</span></p>
         {{/if}}
     {{else}}
-    <h1>O que nossos usuários estão <span>Pensando? </span></h1>
+    <h1>Qual a situação da <span>MonkeyPox? </span></h1>
     {{/if}}
     <form action="/" method="GET">
         <input type="text" name="search" placeholder="Está buscando por algo?">

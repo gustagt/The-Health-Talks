@@ -1,9 +1,15 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('toughts', 'root', 'samuel123', {
+// const sequelize = new Sequelize('toughts', 'root', 'samuel123', {
+//     host:'localhost',
+//     dialect:'mysql'
+// })
+
+const sequelize = new Sequelize('teste', 'root', '123456', {
     host:'localhost',
     dialect:'mysql'
 })
+
 
 try{
     sequelize.authenticate();
