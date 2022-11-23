@@ -1,6 +1,8 @@
 const Tought = require('../models/Tought');
 const User = require('../models/User');
-const { Op } = require('sequelize');
+const { Op 
+
+} = require('sequelize');
 
 module.exports = class ToughtController {
 
@@ -148,4 +150,9 @@ module.exports = class ToughtController {
 
         
     }
+
+    static info(req, res){
+        res.render('toughts/info')
+    }
+
 }

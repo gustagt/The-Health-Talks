@@ -8,7 +8,8 @@
   
   /* NAVBAR */
   #logo img {
-    height: 40px;
+    width: 150px;
+    height: 60px;
     background-color: #6CFFD3;
   }
   
@@ -296,7 +297,7 @@
   
   /* FOOTER */
   footer {
-    height: 210px;
+    height: 202px;
     display: flex;
     align-items: center;
     justify-content: center;
