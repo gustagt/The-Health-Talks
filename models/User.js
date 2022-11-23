@@ -14,6 +14,10 @@ const User = db.define('User', {
     password:{
         type: DataTypes.STRING,
         require: true
+    },
+    crm:{
+        type: DataTypes.STRING,
+        require: true
     }
 })
 module.exports = User;
