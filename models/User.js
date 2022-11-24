@@ -15,7 +15,7 @@ const User = db.define('User', {
         type: DataTypes.STRING,
         require: true
     },
-    crm:{
+    areaAtuacao:{
         type: DataTypes.STRING,
         require: true
     }

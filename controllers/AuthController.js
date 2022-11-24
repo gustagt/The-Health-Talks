@@ -45,7 +45,7 @@ module.exports = class AuthController {
 
     static async registerPost(req, res){
         
-        const { name, email, password, confirmpassword, crm} = req.body;
+        const { name, email, password, confirmpassword, areaAtuacao} = req.body;
 
         //Validação de senha e confirmação de senha
         if(password != confirmpassword)
@@ -74,7 +74,7 @@ module.exports = class AuthController {
             name,
             email,
             password: hashedPassword,
-            crm
+            areaAtuacao
         }
 
         User.create(user)
