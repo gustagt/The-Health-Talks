@@ -5,7 +5,7 @@ const User = require('./User');
 
 const Tought = db.define('Tought', {
     title:{
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
         require: true
     },
